@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Connection;
 use Illuminate\Database\Query\Grammars\Grammar;
-//use Illuminate\Database\Schema\Grammars\Grammar;
+use Illuminate\Database\Schema\Grammars\Grammar as SchemaGrammar;
 
 class ODBCDriverConnection extends Connection
 {
@@ -34,7 +34,7 @@ class ODBCDriverConnection extends Connection
 	 */
 	protected function getDefaultSchemaGrammar()
 	{
-		return $this->withTablePrefix(new Schema\Grammars\Grammar);
+		return $this->withTablePrefix(new SchemaGrammar);
 	}
 
 	protected function getGrammarConfig()
